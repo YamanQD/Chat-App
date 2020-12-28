@@ -46,18 +46,20 @@ chatForm.addEventListener('submit', (e) => {
 
 // Add messsage to DOM
 const outputMessage = (message) => {
+  time = moment().tz(Intl.DateTimeFormat().resolvedOptions().timeZone).format('h:mm a')
+
   const li = document.createElement('li')
   if(message.username === username){
     li.classList.add('d-flex', 'justify-content-end', 'w-100', 'my-3', 'message')
     li.style.paddingRight = '16px'
-    li.innerHTML = `<small class="time">${message.time}</small><div class="speech-bubble-right p-2">${message.text}</div>`
+    li.innerHTML = `<small class="time">${time}</small><div class="speech-bubble-right p-2">${message.text}</div>`
   } else {
     li.classList.add('d-flex', 'justify-content-begin', 'w-100', 'my-3', 'message')
     li.style.paddingLeft = '16px'
     if(message.username === 'ChatOn Bot') {
-      li.innerHTML = `<div class="speech-bubble-left p-2"><span class="sender-name">${message.username}</span><span style="color:#3EC300;">${message.text}</span></div><small class="time">${message.time}</small>`
+      li.innerHTML = `<div class="speech-bubble-left p-2"><span class="sender-name">${message.username}</span><span style="color:#3EC300;">${message.text}</span></div><small class="time">${time}</small>`
     } else {
-      li.innerHTML = `<div class="speech-bubble-left p-2"><span class="sender-name">${message.username}</span>${message.text}</div><small class="time">${message.time}</small>`
+      li.innerHTML = `<div class="speech-bubble-left p-2"><span class="sender-name">${message.username}</span>${message.text}</div><small class="time">${time}</small>`
     }
   }
   document.querySelector('.messages').appendChild(li)
