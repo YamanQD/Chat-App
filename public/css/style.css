@@ -1,0 +1,311 @@
+html {
+  height: 100%;
+}
+
+body {
+  height: 100%;
+}
+
+.container-fluid {
+  height: 100%;
+}
+
+.header {
+  background-color: #2E294E;
+}
+
+.messages {
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+.list-group-item:nth-child(even) {
+  background-color: rgb(243, 243, 243);
+}
+
+#toggle-button,
+#sidebar,
+#chat {
+  transition: all .6s;
+}
+
+#chat {
+  overflow-x: hidden;
+  height: 100%;
+}
+
+#sidebar {
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
+.message {
+  overflow: hidden;
+}
+
+.speech-bubble-left,
+.speech-bubble-right {
+  max-width: 80%;
+  display: -webkit-box;
+  -webkit-line-clamp: 20;
+  -webkit-box-orient: vertical;
+  word-wrap: break-word;
+}
+
+.speech-bubble-right {
+  position: relative;
+  background: #007bff;
+  border-radius: .4em;
+  color: #fff;
+  margin-left: 4px;
+  min-width: 4%;
+}
+
+.speech-bubble-right:after {
+  content: '';
+  position: absolute;
+  right: 2px;
+  top: 50%;
+  width: 0;
+  height: 0;
+  border: 0.875em solid transparent;
+  border-left-color: #007bff;
+  border-right: 0;
+  border-top: 0;
+  margin-top: -0.437em;
+  margin-right: -0.875em;
+}
+
+.speech-bubble-left {
+  position: relative;
+  background: #e3e3e4;
+  border-radius: .4em;
+  color: #000 !important;
+  margin-right: 4px;
+  min-width: 10%;
+}
+
+.speech-bubble-left:after {
+  content: '';
+  position: absolute;
+  left: 2px;
+  top: 50%;
+  width: 0;
+  height: 0;
+  border: 0.875em solid transparent;
+  border-right-color: #e3e3e4;
+  border-left: 0;
+  border-top: 0;
+  margin-top: -0.437em;
+  margin-left: -0.875em;
+}
+
+.form-control:placeholder-shown,
+.form-control {
+  padding-bottom: 15px;
+  padding-top: 15px;
+}
+
+.form-control-large {
+  height: 10%;
+}
+
+#msg {
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+  flex-grow: 1;
+  height: 56px;
+}
+
+#send {
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+  flex-basis: 8%;
+  flex-grow: 1;
+}
+
+.input-container {
+  position: sticky;
+  bottom: 0;
+  height: 60px;
+}
+
+#username,
+#room-id {
+  height: 2.8em;
+  width: 50%;
+  transition: all 0.5s;
+}
+
+#username:focus,
+#room-id:focus {
+  width: 90%;
+}
+
+.form-group {
+  margin-left: 10%;
+}
+
+.submit {
+  height: 2.5em;
+  width: 80%;
+  align-self: center;
+}
+
+.messages {
+  height: calc(100% - 60px);
+}
+
+.sender-name {
+  color: rgb(0, 132, 255);
+  display: block;
+  margin-bottom: 2px;
+}
+
+.time {
+  color: rgb(114, 106, 235);
+  align-self: flex-end;
+}
+
+/*
+================================================================
+  Media queries
+================================================================
+*/
+
+@media screen and (max-width:400px) {
+  .container {
+    height: 100vh;
+  }
+
+  #sidebar {
+    margin-left: -100%;
+    width: 100%;
+  }
+
+  h1 {
+    font-size: 20px;
+    flex-grow: 1;
+    text-align: left;
+    margin-left: 3%;
+  }
+
+  h2 {
+    font-size: 16px;
+  }
+
+  body {
+    font-size: 14px;
+  }
+
+  .mobile-header {
+    justify-content: space-between !important;
+    align-items: center;
+  }
+
+  .fa-bars {
+    font-size: 22px;
+  }
+
+  .header {
+    height: 70px;
+  }
+
+  .body {
+    height: calc(100% - 70px);
+  }
+}
+
+@media screen and (max-width:767px) and (min-width:401px) {
+  .container {
+    height: 100vh;
+  }
+
+  #sidebar {
+    margin-left: -100%;
+    width: 100%;
+  }
+
+  h1 {
+    font-size: 28px;
+    flex-grow: 1;
+    text-align: left;
+    margin-left: 3%;
+  }
+
+  h2 {
+    font-size: 20px;
+  }
+
+  body {
+    font-size: 16px;
+  }
+
+  .mobile-header {
+    justify-content: space-between !important;
+    align-items: center;
+  }
+
+  .fa-bars {
+    font-size: 22px;
+  }
+
+  .header {
+    height: 70px;
+  }
+
+  .body {
+    height: calc(100% - 70px);
+  }
+
+  .form-control-large {
+    padding-bottom: 10px;
+  }
+
+  .container {
+    width: 100%;
+  }
+}
+
+@media screen and (min-width:768px) {
+  h1 {
+    font-size: 36px;
+  }
+
+  h2 {
+    font-size: 26px;
+  }
+
+  body {
+    font-size: 20px;
+  }
+
+  .fa-paper-plane {
+    font-size: 22px;
+  }
+
+  .header {
+    height: 90px;
+  }
+
+  .container h1 {
+    font-size: 40px;
+  }
+
+  .body {
+    height: calc(100% - 90px);
+  }
+
+  .submit {
+    font-size: 24px;
+  }
+
+  .container {
+    width: 50%;
+    font-size: 26px;
+  }
+
+  .time {
+    font-size: 14px;
+  }
+}

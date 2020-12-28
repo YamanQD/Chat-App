@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <!--Bootstrap-->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+  <!--Font Awesome Icons-->
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+  <!--Custom CSS-->
+  <link rel="stylesheet" href="./css/style.css">
+  <title>ChatOn - Realtime Chat</title>
+</head>
+<body>
+  <div class="container bg-light" style="overflow: hidden;">
+    <!--Header-->
+    <div class="row border-bottom header">
+      <!--Logo-->
+      <div class="col-12">
+        <h1 class="text-light py-3 pl-1 text-center"><a href="#" class="text-decoration-none text-light"><i class="fas fa-comments mr-1"></i>ChatOn</a></h1>
+      </div>
+    </div>
+    <!--Body-->
+    <div class="row body d-flex justify-content-center py-4 w-100" style="overflow:hidden;">
+      <div class="col-12">
+        <!--Form-->
+        <form action="chat.html" class="d-flex flex-column justify-content-around align-items-begin">
+          <div class="form-group">
+            <label for="username" class="">Nickname</label>
+            <input type="text" id="username" name="username" class="form-control" minlength="3" maxlength="20" required>
+          </div>
+          <div class="form-group" style="margin-left: -22px;">
+            <div class="custom-control custom-radio">
+              <div class="form-group">
+                <input type="radio" name="room" id="main-room" value="main-room" class="custom-control-input" onclick="handleMainRadio();" checked>
+                <label for="main-room" class="custom-control-label">Main room</label>
+              </div>
+              <div class="form-group">
+                <input type="radio" name="room" id="custom-room" value="custom-room" class="custom-control-input" onclick="handleCustomRadio();">
+                <label for="custom-room" class="custom-control-label">Custom room</label>
+                <input type="text" class="form-control" id="room-id" name="roomId" maxlength="10" required disabled>
+              </div>
+            </div>
+          </div>
+          <button type="submit" class="btn btn-primary submit">Chat On!</button>
+        </form>
+      </div>
+    </div>
+  </div>
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
+  <script src="/socket.io/socket.io.js"></script>
+  <!--Enable and Disable Room ID Input field-->
+  <script>
+    handleMainRadio = () => {
+      document.getElementById('room-id').disabled = true;
+    }
+
+    handleCustomRadio = () => {
+      document.getElementById('room-id').disabled = false;
+    }
+  </script>
+</body>
+</html>
