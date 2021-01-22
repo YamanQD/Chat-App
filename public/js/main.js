@@ -4,10 +4,8 @@ const roomName = document.getElementById('roomId')
 const userList = document.getElementById('users')
 
 // Get username and room-id from URl
-let {username, roomId} = Qs.parse(location.search, {
-  ignoreQueryPrefix: true
-})
-roomId ||= 'main'
+const username = Qs.parse(location.search, {ignoreQueryPrefix: true}).username
+const roomId = Qs.parse(location.search, {ignoreQueryPrefix: true}).roomId || 'main'
 
 const socket = io();
 
