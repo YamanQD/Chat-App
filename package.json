@@ -10,13 +10,14 @@
   "author": "Yaman Qassas",
   "license": "MIT",
   "dependencies": {
+    "dotenv": "^9.0.2",
     "express": "^4.17.1",
     "moment": "^2.29.1",
     "moment-timezone": "^0.5.32",
     "socket.io": "^3.0.3"
   },
   "devDependencies": {
-    "jsdoc": "^3.6.6",
+    "jsdoc": "^3.6.7",
     "nodemon": "^2.0.6"
   }
 }
